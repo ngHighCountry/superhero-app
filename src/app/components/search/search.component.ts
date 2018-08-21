@@ -23,11 +23,11 @@ export class SearchComponent implements OnInit {
       .subscribe(data => (this.heros = data));
   }
 
-  DeleteHeroById(id: string) {
-    const index = this.heros.results.findIndex(hero => hero.id === id);
+  DeleteHeroById(id: number) {
+    const index = this.heros.data.results.findIndex(hero => hero.id === id);
 
     if (index !== -1) {
-      this.heros.results.splice(index, 1);
+      this.heros.data.results.splice(index, 1);
     }
   }
 }

@@ -5,4 +5,4 @@
   <button mat-raised-button (click)="Search()">SEARCH</button>
 
 </div>
-<app-heros *ngIf="heros?.response === 'success'" [heros]="heros" (deleteHero)="DeleteHeroById($event)"></app-heros>
+<app-heros *ngIf="heros?.status === 'Ok'" [heros]="heros" (deleteHero)="DeleteHeroById($event)"></app-heros>

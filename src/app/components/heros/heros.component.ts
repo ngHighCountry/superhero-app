@@ -17,7 +17,7 @@ export class HerosComponent implements OnInit {
 
   ngOnInit() {}
 
-  DeleteHero(id: string) {
+  DeleteHero(id: number) {
     this.deleteHero.emit(id);
   }
 }

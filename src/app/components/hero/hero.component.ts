@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Result } from '../../models';
+import { Thumbnail, Url } from '../../models/hero';
 
 @Component({
   selector: 'app-hero',
@@ -16,7 +17,16 @@ export class HeroComponent implements OnInit {
 
   ngOnInit() {}
 
-  heroToDelete(id: string) {
+  heroToDelete(id: number) {
     this.deleteHero.emit(id);
+  }
+
+  GoToWebsite(urls: Url[]) {
+    const url = urls.find(u => u.type === 'detail');
+    window.open(url.url, '_blank');
+  }
+
+  GetImageUrl(thumbnail: Thumbnail) {
+    return `${thumbnail.path}.${thumbnail.extension}`;
   }
 }

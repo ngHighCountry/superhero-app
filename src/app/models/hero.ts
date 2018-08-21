@@ -1,58 +1,90 @@
-export interface Powerstats {
-  intelligence: string;
-  strength: string;
-  speed: string;
-  durability: string;
-  power: string;
-  combat: string;
+export interface Thumbnail {
+  path: string;
+  extension: string;
 }
 
-export interface Biography {
-  'full-name': string;
-  'alter-egos': string;
-  aliases: string[];
-  'place-of-birth': string;
-  'first-appearance': string;
-  publisher: string;
-  alignment: string;
+export interface Item {
+  resourceURI: string;
+  name: string;
 }
 
-export interface Appearance {
-  gender: string;
-  race: string;
-  height: string[];
-  weight: string[];
-  'eye-color': string;
-  'hair-color': string;
+export interface Comics {
+  available: number;
+  collectionURI: string;
+  items: Item[];
+  returned: number;
 }
 
-export interface Work {
-  occupation: string;
-  base: string;
+export interface Item2 {
+  resourceURI: string;
+  name: string;
 }
 
-export interface Connections {
-  'group-affiliation': string;
-  relatives: string;
+export interface Series {
+  available: number;
+  collectionURI: string;
+  items: Item2[];
+  returned: number;
 }
 
-export interface Image {
+export interface Item3 {
+  resourceURI: string;
+  name: string;
+  type: string;
+}
+
+export interface Stories {
+  available: number;
+  collectionURI: string;
+  items: Item3[];
+  returned: number;
+}
+
+export interface Item4 {
+  resourceURI: string;
+  name: string;
+}
+
+export interface Events {
+  available: number;
+  collectionURI: string;
+  items: Item4[];
+  returned: number;
+}
+
+export interface Url {
+  type: string;
   url: string;
 }
 
 export interface Result {
-  id: string;
+  id: number;
   name: string;
-  powerstats: Powerstats;
-  biography: Biography;
-  appearance: Appearance;
-  work: Work;
-  connections: Connections;
-  image: Image;
+  description: string;
+  modified: Date;
+  thumbnail: Thumbnail;
+  resourceURI: string;
+  comics: Comics;
+  series: Series;
+  stories: Stories;
+  events: Events;
+  urls: Url[];
+}
+
+export interface Data {
+  offset: number;
+  limit: number;
+  total: number;
+  count: number;
+  results: Result[];
 }
 
 export interface Hero {
-  response: string;
-  'results-for': string;
-  results: Result[];
+  code: number;
+  status: string;
+  copyright: string;
+  attributionText: string;
+  attributionHTML: string;
+  etag: string;
+  data: Data;
 }
