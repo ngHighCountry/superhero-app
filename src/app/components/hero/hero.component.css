@@ -1,3 +1,6 @@
 .hero-card {
-  min-width: 250px;
+  width: 250px;
+  height: 90%;
+  margin-right: 10px;
+  background-color: #f4f4f4;
 }
