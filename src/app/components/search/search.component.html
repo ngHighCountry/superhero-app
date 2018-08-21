@@ -1,0 +1,8 @@
+<div class="hero-container">
+  <mat-form-field>
+    <input matInput #searchTerm type="text" placeholder="Find a super hero" formControlName="searchTerm">
+  </mat-form-field>
+  <button mat-raised-button (click)="Search()">SEARCH</button>
+
+</div>
+<app-heros *ngIf="heros?.response === 'success'" [heros]="heros" (deleteHero)="DeleteHeroById($event)"></app-heros>

@@ -1,0 +1,8 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-container > * {
+  width: 100%;
+}

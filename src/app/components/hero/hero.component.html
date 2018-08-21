@@ -1,0 +1,12 @@
+<mat-card class="hero-card" (click)="heroToDelete(hero.id)">
+  <mat-card-header>
+    <mat-card-title>{{hero.name}}</mat-card-title>
+    <mat-card-subtitle>Gender: {{hero.appearance.gender}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="hero.image.url" alt="Photo of a superhero">
+  <mat-card-content>
+    <p>
+      Aliases: {{hero.biography.aliases}}
+    </p>
+  </mat-card-content>
+</mat-card>
