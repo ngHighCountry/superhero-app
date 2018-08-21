@@ -6,3 +6,24 @@
 .hero-container > * {
   width: 100%;
 }
+
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.heros h1 {
+  text-align: center;
+}
+
+.hero-card {
+  width: 250px;
+  margin-right: 10px;
+  background-color: #f4f4f4;
+  margin-bottom: 50px;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-between;
+}

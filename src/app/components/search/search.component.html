@@ -3,6 +3,21 @@
     <input matInput #searchTerm type="text" placeholder="Find a super hero" formControlName="searchTerm">
   </mat-form-field>
   <button mat-raised-button (click)="Search()">SEARCH</button>
-
 </div>
-<app-heros *ngIf="heros?.status === 'Ok'" [heros]="heros" (deleteHero)="DeleteHeroById($event)"></app-heros>
+
+<div class="heros" *ngIf="heros?.status === 'Ok'">
+  <h1>{{heros?.data?.results?.length}} Heros</h1>
+  <div *ngIf="heros?.data.results?.length > 0" class="hero-cards">
+    <mat-card class="hero-card" *ngFor="let hero of heros.data.results">
+      <mat-card-header>
+        <mat-card-title>{{hero.name}}</mat-card-title>
+        <mat-card-subtitle>Comics: {{hero.comics.available}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="GetImageUrl(hero.thumbnail)" alt="Photo of a superhero">
+      <mat-card-content>
+        <button mat-raised-button (click)="GoToWebsite(hero.urls)">Visit Website</button>
+        <button mat-raised-button (click)="DeleteHeroById(hero.id)">Remove</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

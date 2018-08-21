@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Hero } from '../../models';
+import { Thumbnail, Url } from '../../models/hero';
 import { HeroService } from '../../services';
 
 @Component({
@@ -29,5 +30,15 @@ export class SearchComponent implements OnInit {
     if (index !== -1) {
       this.heros.data.results.splice(index, 1);
     }
+  }
+
+  GoToWebsite(urls: Url[]) {
+    const url = urls.find(u => u.type === 'detail');
+    window.open(url.url, '_blank');
+  }
+
+  GetImageUrl(thumbnail: Thumbnail) {
+    const url = `${thumbnail.path}.${thumbnail.extension}`;
+    return url.replace('http:', '');
   }
 }
