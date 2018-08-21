@@ -1,6 +1,6 @@
-<div *ngIf="heros?.results?.length > 0" class="heros">
-  <h1>{{heros.results.length}} Heros</h1>
-  <div class="hero-cards">
+<div class="heros">
+  <h1>{{heros?.results?.length}} Heros</h1>
+  <div *ngIf="heros?.results?.length > 0" class="hero-cards">
     <app-hero *ngFor="let item of heros.results" [hero]="item" (deleteHero)="DeleteHero($event)"></app-hero>
   </div>
 </div>
