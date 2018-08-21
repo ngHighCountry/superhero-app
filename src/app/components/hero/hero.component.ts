@@ -27,6 +27,7 @@ export class HeroComponent implements OnInit {
   }
 
   GetImageUrl(thumbnail: Thumbnail) {
-    return `${thumbnail.path}.${thumbnail.extension}`;
+    const url = `${thumbnail.path}.${thumbnail.extension}`;
+    return url.replace('http:', '');
   }
 }
