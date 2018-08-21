@@ -6,7 +6,9 @@
   <img mat-card-image [src]="hero.image.url" alt="Photo of a superhero">
   <mat-card-content>
     <p>
-      Aliases: {{hero.biography.aliases}}
+      Aliases:
+      <span *ngIf="hero.biography.aliases.length > 1">{{hero.biography.aliases}}</span>
+      <span *ngIf="hero.biography.aliases.length === 1">none stated</span>
     </p>
   </mat-card-content>
 </mat-card>
