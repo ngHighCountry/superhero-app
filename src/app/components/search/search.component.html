@@ -6,7 +6,7 @@
 </div>
 
 <div class="heros" *ngIf="heros?.status === 'Ok'">
-  <h1>{{heros?.data?.results?.length}} Heros</h1>
+  <h1>{{heros?.data?.results?.length}} Heroes</h1>
   <div *ngIf="heros?.data.results?.length > 0" class="hero-cards">
     <mat-card class="hero-card" *ngFor="let hero of heros.data.results">
       <mat-card-header>
