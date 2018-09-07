@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Hero } from '../../models';
+import { Hero, Thumbnail } from '../../models';
 import { HeroService } from '../../services';
 
 @Component({
@@ -21,5 +21,10 @@ export class HeroDetailsComponent implements OnInit {
     this.heroService
       .GetHero(routeParams.id)
       .subscribe(data => (this.hero = data));
+  }
+
+  GetImageUrl(thumbnail: Thumbnail) {
+    const url = `${thumbnail.path}.${thumbnail.extension}`;
+    return url.replace('http:', '');
   }
 }
