@@ -1,2 +1,1 @@
-export { Hero } from './hero';
-export { Result } from './hero';
+export { Hero, Result, Thumbnail, Url } from './hero';

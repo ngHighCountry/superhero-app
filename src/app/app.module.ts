@@ -5,13 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { HerosComponent } from './components/heros/heros.component';
 import { SearchComponent } from './components/search/search.component';
 import { HeroService } from './services';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, HerosComponent, HeroComponent],
+  declarations: [AppComponent, SearchComponent, HeroComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,6 +1,11 @@
 .hero-card {
   width: 250px;
-  height: 90%;
   margin-right: 10px;
   background-color: #f4f4f4;
+  margin-bottom: 50px;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-between;
 }

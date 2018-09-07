@@ -14,7 +14,7 @@ export class HeroService {
   SearchHeros(searchTerm: string): Observable<Hero> {
     return this.http
       .get<Hero>(
-        `http://www.superheroapi.com/api.php/10217168513831025/search/${searchTerm}`
+        `https://gateway.marvel.com:443/v1/public/characters?apikey=695089213e7003ca510a2849092d0ca7&nameStartsWith=${searchTerm}`
       )
       .pipe(map(response => response));
   }
