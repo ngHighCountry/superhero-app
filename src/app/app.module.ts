@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { HeroService } from './services';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent],
+  declarations: [AppComponent, SearchComponent, HeroComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

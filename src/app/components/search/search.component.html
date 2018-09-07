@@ -8,16 +8,6 @@
 <div class="heros" *ngIf="heros?.status === 'Ok'">
   <h1>{{heros?.data?.results?.length}} Heroes</h1>
   <div *ngIf="heros?.data.results?.length > 0" class="hero-cards">
-    <mat-card class="hero-card" *ngFor="let hero of heros.data.results">
-      <mat-card-header>
-        <mat-card-title>{{hero.name}}</mat-card-title>
-        <mat-card-subtitle>Comics: {{hero.comics.available}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image [src]="GetImageUrl(hero.thumbnail)" alt="Photo of a superhero">
-      <mat-card-content>
-        <button mat-raised-button (click)="GoToWebsite(hero.urls)">Visit Website</button>
-        <button mat-raised-button (click)="DeleteHeroById(hero.id)">Remove</button>
-      </mat-card-content>
-    </mat-card>
+    <app-hero *ngFor="let hero of heros.data.results" [hero]="hero" (heroId)="DeleteHeroById($event);"></app-hero>
   </div>
 </div>
