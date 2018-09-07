@@ -5,7 +5,7 @@
   </mat-card-header>
   <img mat-card-image [src]="GetImageUrl(hero.thumbnail)" alt="Photo of a superhero">
   <mat-card-content>
-    <button mat-raised-button (click)="GoToWebsite(hero.urls)">Visit Website</button>
+    <button mat-raised-button (click)="GoToDetails(hero.id)">Details</button>
     <button mat-raised-button (click)="DeleteHeroById(hero.id)">Remove</button>
   </mat-card-content>
 </mat-card>

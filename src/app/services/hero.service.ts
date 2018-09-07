@@ -18,4 +18,13 @@ export class HeroService {
       )
       .pipe(map(response => response));
   }
+
+  GetHero(heroId: string): Observable<Hero> {
+    console.log(heroId);
+    return this.http
+      .get<Hero>(
+        `https://gateway.marvel.com:443/v1/public/characters/${heroId}?apikey=695089213e7003ca510a2849092d0ca7`
+      )
+      .pipe(map(response => response));
+  }
 }

@@ -8,6 +8,6 @@
 <div class="heros" *ngIf="heros?.status === 'Ok'">
   <h1>{{heros?.data?.results?.length}} Heroes</h1>
   <div *ngIf="heros?.data.results?.length > 0" class="hero-cards">
-    <app-hero *ngFor="let hero of heros.data.results" [hero]="hero" (heroId)="DeleteHeroById($event);"></app-hero>
+    <app-hero *ngFor="let hero of heros.data.results" [hero]="hero" (heroId)="DeleteHeroById($event);" (heroDetailsId)="GoToDetails($event)"></app-hero>
   </div>
 </div>

@@ -12,6 +12,8 @@ export class HeroComponent implements OnInit {
   hero: Result;
   @Output()
   heroId: EventEmitter<number> = new EventEmitter();
+  @Output()
+  heroDetailsId: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
@@ -19,6 +21,10 @@ export class HeroComponent implements OnInit {
   GoToWebsite(urls: Url[]) {
     const url = urls.find(u => u.type === 'detail');
     window.open(url.url, '_blank');
+  }
+
+  GoToDetails(id: number) {
+    this.heroDetailsId.emit(id);
   }
 
   GetImageUrl(thumbnail: Thumbnail) {

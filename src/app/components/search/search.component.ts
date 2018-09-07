@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Hero } from '../../models';
 import { HeroService } from '../../services';
@@ -13,7 +14,7 @@ export class SearchComponent implements OnInit {
   @ViewChild('searchTerm')
   searchTerm;
 
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -29,5 +30,9 @@ export class SearchComponent implements OnInit {
     if (index !== -1) {
       this.heros.data.results.splice(index, 1);
     }
+  }
+
+  GoToDetails(id: string) {
+    this.router.navigate([`/details/${id}`]);
   }
 }

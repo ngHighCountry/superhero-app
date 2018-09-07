@@ -4,20 +4,30 @@ import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/materia
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
+import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SearchComponent } from './components/search/search.component';
 import { HeroService } from './services';
-import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, HeroComponent],
+  declarations: [
+    AppComponent,
+    SearchComponent,
+    HeroComponent,
+    HeroDetailsComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
