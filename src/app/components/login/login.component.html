@@ -1,12 +1,12 @@
 <h2>Login</h2>
-<mat-form-field>
-  <label for="username">Username</label>
-  <input matInput value="{{emailAddress}}" />
-</mat-form-field>
-<mat-form-field>
-  <label for="password">Password</label>
-  <input matInput type="password" value="{{password}}" />
-</mat-form-field>
-<div>
-  <button mat-button (click)="tryLogin()">Login</button>
+<div class="login-form">
+  <mat-form-field class="login-full-width">
+    <input matInput value="{{emailAddress}}" placeholder="email address" />
+  </mat-form-field>
+  <mat-form-field class="login-full-width">
+    <input matInput type="password" value="{{password}}" placeholder="password" />
+  </mat-form-field>
+  <div>
+    <button mat-button (click)="tryLogin()">Login</button>
+  </div>
 </div>
