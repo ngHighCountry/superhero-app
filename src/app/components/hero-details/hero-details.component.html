@@ -1,7 +1,8 @@
 <mat-card class="hero-card" *ngIf="hero" class="hero-card">
   <mat-card-title>{{hero.data.results[0].name}}</mat-card-title>
   <mat-card-content>
-    <p>{{hero.data.results[0].description}}</p>
+    <p *ngIf="hero.data.results[0].description.length > 0">{{hero.data.results[0].description}}</p>
+    <p *ngIf="hero.data.results[0].description.length === 0">No description for {{hero.data.results[0].name}}</p>
   </mat-card-content>
 
   <img mat-card-image [src]="GetImageUrl(hero.data.results[0].thumbnail)" alt="Photo of a superhero">
