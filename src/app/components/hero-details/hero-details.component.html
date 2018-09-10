@@ -1,5 +1,11 @@
-<div *ngIf="hero">
-  <h2>{{hero.data.results[0].name}}</h2>
-  <p>{{hero.data.results[0].description}}</p>
+<mat-card class="hero-card" *ngIf="hero" class="hero-card">
+  <mat-card-title>{{hero.data.results[0].name}}</mat-card-title>
+  <mat-card-content>
+    <p>{{hero.data.results[0].description}}</p>
+  </mat-card-content>
+
   <img mat-card-image [src]="GetImageUrl(hero.data.results[0].thumbnail)" alt="Photo of a superhero">
-</div>
+  <mat-card-actions>
+    <button mat-raised-button (click)="GoToSearch()" color="warn">Back</button>
+  </mat-card-actions>
+</mat-card>

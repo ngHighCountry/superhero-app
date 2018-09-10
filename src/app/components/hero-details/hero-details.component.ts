@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Hero, Thumbnail } from '../../models';
 import { HeroService } from '../../services';
@@ -13,7 +13,8 @@ export class HeroDetailsComponent implements OnInit {
   hero: Hero;
   constructor(
     private heroService: HeroService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -26,5 +27,9 @@ export class HeroDetailsComponent implements OnInit {
   GetImageUrl(thumbnail: Thumbnail) {
     const url = `${thumbnail.path}.${thumbnail.extension}`;
     return url.replace('http:', '');
+  }
+
+  GoToSearch() {
+    this.router.navigate(['./']);
   }
 }

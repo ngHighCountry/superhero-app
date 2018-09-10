@@ -21,18 +21,17 @@ export class LoginComponent implements OnInit {
     private customer: CustomerService
   ) {}
 
-  ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  }
+  ngOnInit() {}
 
   tryLogin() {
+    const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || '/';
     this.authenticationService
       .login(this.emailAddress, this.password)
       .subscribe(
         r => {
           if (r.token) {
             this.customer.setToken(r.token);
-            this.router.navigate([this.returnUrl]);
+            this.router.navigate([redirectUrl]);
           }
         },
         r => {
