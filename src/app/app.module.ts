@@ -4,7 +4,7 @@ import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/materia
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroComponent } from './components/hero/hero.component';
