@@ -16,12 +16,19 @@ export class SearchComponent implements OnInit {
 
   constructor(private heroService: HeroService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('heros')) {
+      this.heros = JSON.parse(localStorage.getItem('heros'));
+    }
+  }
 
   Search() {
     this.heroService
       .SearchHeros(this.searchTerm.nativeElement.value)
-      .subscribe(data => (this.heros = data));
+      .subscribe(data => {
+        this.heros = data;
+        localStorage.setItem('heros', JSON.stringify(this.heros));
+      });
   }
 
   DeleteHeroById(id: number) {
