@@ -8,6 +8,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SearchComponent } from './components/search/search.component';
 import { HeroService } from './services';
@@ -18,7 +19,8 @@ import { HeroService } from './services';
     SearchComponent,
     HeroComponent,
     HeroDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
